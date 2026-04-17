@@ -168,14 +168,29 @@ body {
 
   /* Body (waypoints): sits below the map */
   .card-body {
-    padding: 4px 14px 8px;
+    padding: 0;
     border-top: 1px solid #ede9e3;
     border-bottom: 1px solid #ede9e3;
   }
 
-  .atm-list { max-height: none; overflow-y: visible; }
-  .atm-item { padding: 7px 4px; }
-  .atm-name { font-size: 11.5px; }
+  /* Two-column grid for the waypoint list */
+  .atm-list {
+    max-height: none;
+    overflow-y: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .atm-item {
+    padding: 8px 10px;
+    border-right: 1px solid #f2efe9;
+    border-bottom: 1px solid #f2efe9;
+    border-radius: 0;
+  }
+  /* Remove right border on every second (right-column) item */
+  .atm-item:nth-child(2n) { border-right: none; }
+
+  .atm-name { font-size: 11px; }
 
   /* Reset: flows at very bottom */
   .reset-btn {
